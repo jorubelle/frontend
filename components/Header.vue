@@ -1,5 +1,5 @@
 
-// components/Header.vue
+<!-- // components/Header.vue -->
 <template>
   <nav class="uk-navbar uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
