@@ -1,6 +1,6 @@
 // nuxt.config.js
 
-const strapiBaseUri = process.env.API_URL || "https://blooming-river-40409.herokuapp.com";
+const strapiBaseUri = process.env.API_URL || "http://localhost:1337";
 
 
 // module.exports = {
@@ -13,9 +13,6 @@ const strapiBaseUri = process.env.API_URL || "https://blooming-river-40409.herok
 
 
 export default {
-
-    
-
   
    // ENV: https://nuxtjs.org/docs/configuration-glossary/configuration-env
    env: {
@@ -65,6 +62,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxt/http', '@nuxtjs/apollo'],
+
   // Apollo: https://github.com/nuxt-community/apollo-module#usage
   apollo: {
     clientConfigs: {
