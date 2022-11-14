@@ -3,50 +3,56 @@
 <template>
   <div class="uk-container uk-container-xsmall">
     <h1 class="uk-heading-small">Checkout</h1>
+
     <div v-if="success" class="uk-alert-success" uk-alert>
       <a class="uk-alert-close" uk-close></a>
       <p>{{ success.message }}</p>
     </div>
+
     <div v-if="err" class="uk-alert-danger" uk-alert>
       <a class="uk-alert-close" uk-close></a>
       <p>{{ err.message }}</p>
     </div>
+
     <Cart :checkout="false" />
+
     <div class="uk-margin">
       <label class="uk-form-label">
         Address
         <input v-model="address" class="uk-input" type="email" />
       </label>
     </div>
+
     <div class="uk-margin-top">
       <StripeElements v-slot="{ elements }" ref="elms" :stripe-key="stripeKey">
         <StripeElement ref="card" type="card" :elements="elements" />
       </StripeElements>
+
       <button
         class="uk-button uk-button-secondary uk-margin-top uk-width-1-1"
-        @click="pay()"
+        @click="pay"
       >
         Pay
       </button>
     </div>
   </div>
 </template>
+
 <script>
 import { StripeElements, StripeElement } from 'vue-stripe-elements-plus'
-
 import { mapGetters, mapMutations } from 'vuex'
 export default {
   components: {
     StripeElements,
     StripeElement,
-    
   },
   data() {
     return {
       success: null,
       err: null,
       address: '',
-      stripeKey: process.env.stripePublishable,
+      stripeKey:
+        'pk_test_51LkBlcKuOke8qQn9DAgLXJ2YjLcc7c0t9pHPfT2SKwb5wUlyBY0TavCzB8ZXBXjSJLj2BNW3SzJJabftTT5pRWEc00uyGSYNeS', // test key, don't hardcode
     }
   },
   computed: {
@@ -73,7 +79,7 @@ export default {
         this.err = err.response?.data?.error
       }
       try {
-        await this.http.$post('orders', {
+        await this.$http.$post('orders', {
           data: {
             address,
             amount: this.$store.getters['cart/price'],

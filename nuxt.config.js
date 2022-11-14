@@ -1,10 +1,20 @@
 // nuxt.config.js
 
-const strapiBaseUri = process.env.API_URL || "https://blooming-river-40409.herokuapp.com/";
+const strapiBaseUri = process.env.API_URL || "http://localhost:1337";
+
+
+// module.exports = {
+//   // Global page headers: https://go.nuxtjs.dev/config-head
+//   head: {
+//     // ...other properties
+//     script: [{ src: 'https://js.stripe.com/v3/' }],
+//   },
+// }
+
 
 export default {
 
-
+    
 
   
    // ENV: https://nuxtjs.org/docs/configuration-glossary/configuration-env
@@ -15,8 +25,9 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
+ // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    
     title: 'frontend',
     htmlAttrs: {
       lang: 'en',
@@ -29,6 +40,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [{ src: 'https://js.stripe.com/v3/' }],
+    
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
