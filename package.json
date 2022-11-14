@@ -37,8 +37,8 @@
     "eslint-plugin-vue": "^9.5.1",
     "prettier": "^2.7.1"
   },
-    "engines": {
-    "node": ">=14.19.1 <=18.x.x",
-    "npm": ">=6.0.0"
+  "engines": {
+    "node": ">=16.17.0",
+    "npm": "8.15.0"
   }
 }
