@@ -1,6 +1,6 @@
 // nuxt.config.js
 
-const strapiBaseUri = process.env.API_URL || "https://blooming-river-40409.herokuapp.com/";
+const strapiBaseUri = process.env.API_URL || "http://localhost:1337";
 
 
 // module.exports = {
